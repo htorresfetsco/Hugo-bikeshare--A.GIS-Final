@@ -1,0 +1,287 @@
+/* CSS files add styling rules to your content */
+
+body {
+  background-color: lightblue;
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+  border-color: red;
+}
+
+
+a{
+  color: blue;
+  font-size: 8px;
+  
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+
+h2 {
+  color: black;
+  font-size: 10px;
+  font-style: italic;
+}
+
+h4 {
+  color: grey;
+  font-size: 10px;
+  font-style: italic;
+}
+
+
+h3 {
+  font-style: italic;
+  color: #373fff;
+  font-size: 14px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.map-description {
+  background: lightblue;
+  display: inline-block;
+  height: 15%;
+  width: 74.9%;
+  border-radius: 10px;
+  border-color: rgba(0,0,0,1);
+  border-style:solid;
+  border-width:2px;
+}
+
+.map-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 80%;
+}
+
+#map {
+  height: 100%;
+  width: 75%;
+  border-radius: 20px;
+  border-color: rgba(0,0,0,1);
+  border-style:solid;
+  border-top-width:1px;
+  border-width:2px;
+}
+
+.inputborder {
+  background: beige;
+  display: inline-block;
+  border-radius: 20px;
+  border-color: rgba(0,0,0,1);
+  border-style:solid;
+  border-width:2px;
+}
+
+.proposedbutton {
+  position: relative;
+  right: 0px;
+  top: 10px;
+  z-index: 2500;
+  width: 100%;
+}
+
+.citibikebutton {
+  position: relative;
+  right: 0px;
+  top: 20px;
+  z-index: 2500;
+  width: 160px;
+}
+
+.bikelanebutton {
+  position: relative;
+  right: 0px;
+  top: 30px;
+  z-index: 2500;
+}
+
+
+.subwaylinebutton {
+  position: relative;
+  right: 0px;
+  top: 60px;
+  z-index: 2500;
+}
+
+.subwaystationbutton {
+  position: relative;
+  right: 0px;
+  top:60px;
+  z-index: 2500;
+}
+
+.prioritydistrictbutton {
+  position: relative;
+  right: 0px;
+  top:40px;
+  z-index: 2500;
+  
+}
+
+.nychabutton {
+  position: relative;
+  right: 0px;
+  top:50px;
+  z-index: 2500;
+  
+}
+
+.sidebar {
+  background: lightblue;
+  float: right;
+  overflow-y: auto;
+  height: 100%;
+  padding: 10px;
+  width: 25%;
+  
+}
+
+.sidebar-footer {
+  margin-top: 5px;
+  
+}
+
+.layer-pickercensus {
+  position: relative;
+  right: 0px;
+  top: -10px;
+  z-index: 20000;
+  width: 190px;
+}
+
+
+#ethnicitylegend {
+
+  padding: 0px;
+  position: relative;
+  right: 0px;
+  top: 0px;
+  z-index: 2000;
+}
+
+.whitelegend-marker {
+  display: inline-block;
+  background: #7F3C8D;
+  border-radius: 10%;
+  height: 10px;
+  width: 20px;
+}
+
+.spanishlegend-marker {
+  display: inline-block;
+  background: #11A579;
+  border-radius: 10%;
+  height: 10px;
+  width: 20px;
+}
+
+.blacklegend-marker {
+  display: inline-block;
+  background: #3969AC;
+  border-radius: 10%;
+  height: 10px;
+  width: 20px;
+}
+
+.asianlegend-marker {
+  display: inline-block;
+  background:  #F2B701;
+  border-radius: 10%;
+  height: 10px;
+  width: 20px;
+}
+
+.otherlegend-marker {
+  display: inline-block;
+  background: #E73F74;
+  border-radius: 10%;
+  height: 10px;
+  width: 20px;
+}
+
+#legendchoroplethincome {
+
+  padding: 0px;
+  position: relative;
+  right: 0px;
+  top: 0px;
+  z-index: 2000;
+}
+
+#legendchoroplethage {
+
+  padding: 0px;
+  position: relative;
+  right: 0px;
+  top: 0px;
+  z-index: 2000;
+}
+
+#agelegend {
+
+  padding: 0px;
+  position: relative;
+  right: 0px;
+  top: 0px;
+  z-index: 2000;
+}
+
+
+.bikelane-marker {
+  display: inline-block;
+  background: darkgreen;
+  border-radius: 0%;
+  height: 3px;
+  width: 15px;
+}
+
+.citibike button {
+
+    height: 5vh;
+    width: 150px;
+    font-size: 4vh;
+    margin-top: 2vh;
+    margin-bottom: 0vh;
+    margin-left: 44px;
+    margin-right:44px;
+  }
+
+#formpopup {
+  background: #a4fbfb;
+  width: 100%;
+  float: right;
+  margin-top: 2vh;
+  overflow-y: auto;
+  height: 100%;
+  border-radius: 10px;
+  border-color: rgba(0,0,0,1);
+  border-style:solid;
+  border-top-width:1px;
+  border-width:2px;
+  padding: 10px;
+}
+
+#suggestlocationbutton {
+  width: 20%;
+  float: right;
+  margin-top: 20vh;
+  overflow-y: auto;
+  height: 100%;
+  padding: 10px;
+}
