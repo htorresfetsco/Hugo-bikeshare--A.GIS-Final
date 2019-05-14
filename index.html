@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>Where do you want bike share?</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- Load Leaflet CSS -->
+    <link href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" rel="stylesheet">
+    
+    <!-- Load our styles -->
+    <link href="./styles.css" rel="stylesheet">
+  </head>
+  <body>
+    
+   
+     <body2>
+    <div class="box" style="
+    background-color: beige;">
+      <br>
+  <div style="
+              padding-left: 140px;
+              padding-right: 140px;">
+    
+    <div>
+      
+    <h1>
+    <div class="newschool">
+      <p>
+    <img style="width: 10%; height: auto;" src= "https://cdn.glitch.com/d01003ac-6f55-4835-b25b-751150d61c8d%2FThe_New_School_logo.png?1550195359226">
+  </p>
+      </div>
+    <center>Where do you want bike share?</center>
+<center style="
+    font-size: small;
+               ">by Hugo Torres-Fetsco</center>
+    </h1></div>
+    <br>
+    <br>
+    <div style="
+    font-style: italic;">
+      
+                                 
+
+    It was announced in November 2018 that Citi Bike will be getting a $100 Million investment from parent company Lyft to double the current service area and more than triple its number of bikes to nearly 40,000 on NYC streets. Some of the biggest criticism of Citi Bike is that it has not expanded to low-income and predominately minorty neighborhoods lacking transportation options. The planned expansion will allow for more low-income New Yorkers to be within the service area and benefit from targeted Citi Bike membership discounts (i.e. $5/mo for NYCHA residents or SNAP recipients). In addition, there will be opportunities to improve upon the previous community engagement efforts. <br>
+      
+       </div>   
+      <br>
+      
+           <a href="https://nyc.streetsblog.org/2013/04/08/with-citi-bike-rollout-dot-report-reviews-station-planning-history/" target="_blank">1</a>
+Previous DOT Community Engagement Approach:
+    <ul>
+    <li>In 2011 and 2012, New Yorkers could suggest bike-share stations at public workshops where participants mapped out where they wanted stations to go
+</li> 
+    <li>Eighteen months of meetings, demonstrations and discussion, 14 community planning workshops, and more than 10,000 online suggestions produced a vast quantity of information on where New Yorkers wanted to see Citi Bike stations
+</li>
+    <li>DOT used that information to come up with a preliminary map of 600 bike-share stations
+</li> 
+    </ul>
+    
+    <center><a href="http://nycbikeshare.herokuapp.com/page/about" target="_blank">DOT Bike Share Suggestion Website</a><br></center>
+      <br>
+    <div class="headerImg">
+        <a href="./index.html"></a>
+    <center><img style="width: 20%; height: auto;" src="https://cdn.glitch.com/9a70f393-6e30-4be3-a2e4-6fe75abab080%2Fbike_share_mtg.png?1556771420963"><img style="width: 24%; height: auto;" src="https://cdn.glitch.com/d3fd1883-9270-41dc-8645-f123eee620d7%2Fcitibikeimage.jpg?1556603904607"></center>
+      </div>
+      </div>
+    </div>
+  </body2>
+    <br>
+    
+    <div>
+    <br>
+     
+      
+      <div class="map-description" style="padding-left:20px;margin-left: 20px;"><h1 style="font-size: large;"><center>
+      The objective of this map is to allow visitors to leverage census data and surrounding transportation infrastructure when suggesting a bike share location (a feature currently not available on the DOT bike share suggestion website)</center></h1> 
+          
+    <div style="padding-left:20px;">
+      Census data and surrounding tranportation infrastructure will be displayed in the sidebar when you click a point on the map<br>
+      Click the 'Suggest A Location' button and fill out the form to add a suggested bike share location on the map below
+      
+        </div>
+        <br>
+        </div>
+        
+      
+          <div id="suggestlocationbutton">
+          
+     <center><button class="toggle-suggestlocationbutton"
+                style="background-color: #a4fbfb; height: 70px; width: 215px;">
+           <img style="width: 12%; height: auto;" src="https://cdn.glitch.com/d3fd1883-9270-41dc-8645-f123eee620d7%2Flocation_map_pin_turquoise_blue7.png?1556610127959"> SUGGEST A LOCATION
+        </button>    
+          
+      
+      <div id="formpopup" style="display: none;">
+        
+            <div id="forminput"><center>
+  
+        <script type="text/javascript">var submitted=false;</script>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)  {window.location='thanks.html';}"></iframe>
+        
+        <script>console.log(submitted);</script>
+        
+        <br>
+        
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSeqzac3TvPp1-IKIeoN-nEsB9Lyy2A0nnHdlL2LLFHNIcVjbQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;"
+              style="
+    padding-left: 5px;
+    padding-right: 5px;"
+              >
+      
+          <div>
+            
+            <h2 style="font-size: medium;">
+        Input your information below to save the proposed Citi Bike location and add it to this map:
+
+            </h2>
+      </div><br>
+          <label for="your-name">Your Name</label><br>
+        <input style="margin-top: 0.5em;" id="your-name" type="text" name="entry.1813135963"/>
+      
+          <div>
+              <p>
+              <label for="describe">This would be a great location because:</label>
+                <br>
+              <textarea id="describe" name="entry.1446189163" style="margin-top: 0.5em; height: 70px; width: 215px;"></textarea>
+              </p>
+            </div>
+          
+          <div>
+        <label for="your-zip">Your Zipcode (optional)</label><br>
+        <input style="margin-top: 0.5em;" id="your-zip" name="entry.1980751783"/>
+      </div><br>
+      <div>
+         <label for="your-age">Your Age (optional)</label><br>
+        <input style="margin-top: 0.5em;" id="your-age" type="text" name="entry.252356123" />
+      </div><br>
+          
+            <div style="line-height: 0;">
+              <p style="line-height: 0;"><h5>* Required Fields</h5></p>
+            </div>
+      
+           <input class="longitude-field" id="longitude" type="hidden" name="entry.724633611" />
+      <input class="latitude-field" id="latitude" type="hidden" name="entry.667894503" />
+          <br>
+       
+        <input class="submit-button" style="border-radius: 8px; cursor: pointer;" type="submit" value="Submit" disabled="true"/>
+    </form> 
+        </center>    
+              
+          </div>
+      </div> </center> 
+  </div>
+      
+    <br><br><br>
+    <div class="map-wrapper">
+  
+      <div class="sidebar" style="padding-left: 30px;">
+        
+        <div>
+  
+      <select class="layer-pickercensus" style="
+    background-color: lightgrey;
+">
+        <option value="off1">Census Track Information</option>
+        <option value="race">Census Track: Majority Ethnicity</option>
+        <option value="income">Census Track: Median Household Income</option>
+        <option value="age">Census Track: Average Age</option>
+      </select>
+          </div>
+
+     
+          <div id="ethnicitylegend" style="display: none;">
+            <span class="whitelegend-marker"></span> White 
+            <br>
+            <span class="spanishlegend-marker"></span> Hispanic or Lartino
+            <br>
+            <span class="blacklegend-marker"></span> Black
+            <br>
+            <span class="asianlegend-marker"></span> Asian
+            <br>
+            <span class="otherlegend-marker"></span> Other
+         <center><a href="https://data.cityofnewyork.us/City-Government/2010-Census-Blocks/v2h8-6mxf" target="_blank" style="
+    font-size: small;
+               ">2010 Census</a></center>
+        
+        </div>
+
+     <div id="legendchoroplethincome" style="display: none;"><br>
+            <div class="legendchoroplethincome" style="opacity: 1 ; background: linear-gradient(90deg , #f7feae, #9bd8a4, #46aea0, #058092, #045275)">
+  <span class="Legend-choroplethAverage CDB-Text CDB-Size-small u-altTextColor" style="opacity: 1 ; left: 22.660227881771085%">
+    <span class="Legend-choroplethAverageText">Median Household Income: $3.1k to $250k </span>
+  </span>
+</div>
+        <center><a href="https://data.cityofnewyork.us/City-Government/2010-Census-Blocks/v2h8-6mxf" target="_blank" style="
+    font-size: small;
+               ">2010 Census</a></center>
+</div>
+        
+         <div id="legendchoroplethage" style="display: none;"><br>
+      <div class="legendchoroplethage" style="opacity: 1 ; background: linear-gradient(90deg , #f3e0f7, #e0c2ef, #c8a5e4, #aa8bd4, #8871be, #63589f)">
+  
+  <span class="Legend-choroplethAverage CDB-Text CDB-Size-small u-altTextColor" style="opacity: 1 ; left: 34.79561990063779%">
+    <span class="Legend-choroplethAverageText">Average Age (Range: 10 to 86)</span>
+  </span>
+</div>
+            <center><a href="https://data.cityofnewyork.us/City-Government/2010-Census-Blocks/v2h8-6mxf" target="_blank" style="
+    font-size: small;
+               ">2010 Census</a></center>
+</div>
+    
+       
+        
+       <br> 
+  
+         <div>
+           
+         
+       <div class="proposedbutton">
+      
+        <button class="toggle-proposedbutton"
+                style="background-color: #43d6d6; height: 40px; width: 190px;">
+          <img style="width: 12%; height: auto;" src="https://cdn.glitch.com/d3fd1883-9270-41dc-8645-f123eee620d7%2Flocation_map_pin_turquoise_blue7.png?1556610127959"> Suggested Stations 
+         <a href="https://docs.google.com/spreadsheets/d/1lzja5nZukRdz8D-eW_pJds1OUGjx3QNhbgm8qLJ2rXQ/edit#gid=1073651653" target="_blank">Source</a></button> 
+        
+      </div>
+        
+    <div class="citibikebutton">
+      
+        <button class="toggle-citibikebutton"
+                style="background-color: #00bbff; height: 40px; width: 190px;">
+          <img style="width: 8%; height: auto;" src="https://cdn.glitch.com/d3fd1883-9270-41dc-8645-f123eee620d7%2FBicycleMarkerSymbol.png?1556609811137"> Existing Stations
+        <a href="https://www.theopenbus.com/raw-data.html" target="_blank">Source</a></button> 
+       
+      </div>
+    
+            <div class="bikelanebutton">
+               
+        <button class="toggle-bikelanebutton"
+                style="background-color: #00d070; height: 40px; width: 190px;">
+          <span class="bikelane-marker"></span> NYC Bike Routes
+        <a href="https://data.cityofnewyork.us/Transportation/Bicycle-Routes/7vsa-caz7" target="_blank">Source</a></button>
+              
+      </div>
+          
+       <div class="prioritydistrictbutton">
+        <button class="toggle-prioritydistrictbutton"
+                style="background-color: #d7cf00; height: 40px; width: 190px;">
+          Priority Bike Districts
+        <a href="https://data.cityofnewyork.us/Transportation/VZV_Bike-Priority-Areas/ii5c-g6sq" target="_blank">Source</a></button>
+      </div>
+           
+           <div class="nychabutton">
+        <button class="toggle-nychabutton"
+                style="background-color: #E58606; height: 40px; width: 190px;">
+          NYCHA Developments
+        <a href="https://data.cityofnewyork.us/Housing-Development/Map-of-NYCHA-Developments/i9rv-hdr5" target="_blank">Source</a></button>
+      </div>
+        
+        
+        <div class="subwaystationbutton">
+        <button class="toggle-subwaystationbutton"
+                style="background-color: #efc9c9; width: 190px;">
+          Subway Stations
+        <a href="https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49" target="_blank">Source</a></button>
+      </div>
+        
+        <div class="subwaylinebutton" >
+        <button class="toggle-subwaylinebutton"
+                style="background-color: #efc9c9; width: 190px;">
+          Subway Lines
+        <a href="https://data.cityofnewyork.us/Transportation/Subway-Lines/3qz8-muuu" target="_blank">Source</a></button>
+           </div>   
+            </div>    
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        
+     <div class="inputborder" style="padding-left:10px; padding-right:10px;">      
+        
+        <h2 style="
+    font-size: large;">
+          Click to see...
+        </h2>
+        
+          <h2 style="
+    font-size: medium;">
+          How many Citi Bike stations are within 2,500 feet of the point you clicked:
+        </h2>
+        
+        <!-- We create a div where the count data will go when clicked on: -->
+        <div class="sidebar-feature-content5" style="color: blue;"></div>
+          
+        <h2 style="
+    font-size: medium;">
+          How many miles of bike lane are within 2,500 feet of the point you clicked:
+        </h2>
+        
+        <!-- We create a div where the count data will go when clicked on: -->
+        <div class="sidebar-feature-content1" style="color: blue;"></div>
+        
+      
+      <h2 style="
+    font-size: medium;">
+          How many train stations are within 2,500 feet of the point you clicked:
+        </h2>
+        
+        <div class="sidebar-feature-content2" style="color: blue;"></div>
+        
+        <h2 style="
+    font-size: medium;">
+          Median household income within 2,500 feet of the point you clicked:
+        </h2>
+        
+        <!-- We create a div where the count data will go when clicked on: -->
+        <div class="sidebar-feature-content3" style="color: blue;"></div>
+        
+        <h2 style="
+    font-size: medium;">
+          Median age within 2,500 feet of the point you clicked:
+        </h2>
+        
+        <!-- We create a div where the count data will go when clicked on: -->
+        <div class="sidebar-feature-content4" style="color: blue;"></div>
+      <br>
+       </div>
+        
+  
+                </div>
+      
+    
+  
+        <div id="map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative;cursor: auto;padding-left: 0px;left: 20px;margin-right: 0px;right: 0px;outline: none;bottom: 20px;">
+          <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(-195.998px, 193px, 0px);">
+            <div class="leaflet-pane leaflet-tile-pane">
+              <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+                <div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 17; transform: translate3d(-671px, -214px, 0px) scale(2);">
+                </div>
+                <div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(-671px, -214px, 0px) scale(1);">
+                  <img alt="" role="presentation" src="https://b.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1206/1540.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1060px, 500px, 0px); opacity: 1;">
+                  <img alt="" role="presentation" src="https://c.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1207/1540.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1316px, 500px, 0px); opacity: 1;">
+                  <img alt="" role="presentation" src="https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1206/1539.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1060px, 244px, 0px); opacity: 1;">
+                  <img alt="" role="presentation" src="https://b.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1207/1539.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1316px, 244px, 0px); opacity: 1;">
+                  <img alt="" role="presentation" src="https://c.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1206/1541.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1060px, 756px, 0px); opacity: 1;">
+                  <img alt="" role="presentation" src="https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1207/1541.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1316px, 756px, 0px); opacity: 1;">
+                  <img alt="" role="presentation" src="https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1205/1540.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(804px, 500px, 0px); opacity: 1;">
+                  <img alt="" role="presentation" src="https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1208/1540.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1572px, 500px, 0px); opacity: 1;">
+                  <img alt="" role="presentation" src="https://c.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1205/1539.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(804px, 244px, 0px); opacity: 1;">
+                  <img alt="" role="presentation" src="https://c.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1208/1539.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1572px, 244px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1205/1541.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(804px, 756px, 0px); opacity: 1;">
+                  <img alt="" role="presentation" src="https://b.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1208/1541.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1572px, 756px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1206/1538.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1060px, -12px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1207/1538.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1316px, -12px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1206/1542.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1060px, 1012px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1207/1542.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1316px, 1012px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1205/1538.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(804px, -12px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1208/1538.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1572px, -12px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1204/1540.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(548px, 500px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1209/1540.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1828px, 500px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1205/1542.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(804px, 1012px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1208/1542.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1572px, 1012px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1204/1539.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(548px, 244px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1209/1539.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1828px, 244px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1204/1541.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(548px, 756px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1209/1541.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1828px, 756px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1204/1538.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(548px, -12px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1209/1538.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1828px, -12px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1204/1542.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(548px, 1012px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/12/1209/1542.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1828px, 1012px, 0px); opacity: 1;"></div></div><div class="leaflet-layer " style="z-index: 1; opacity: 0.99;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 29; transform: translate3d(-671px, -214px, 0px) scale(2);"></div><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 30; transform: translate3d(-671px, -214px, 0px) scale(1);"><img alt="" role="presentation" src="https://cartocdn-gusc-c.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1206/1540.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1060px, 500px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-d.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1207/1540.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1316px, 500px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-b.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1206/1539.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1060px, 244px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-c.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1207/1539.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1316px, 244px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-d.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1206/1541.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1060px, 756px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-a.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1207/1541.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1316px, 756px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-b.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1205/1540.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(804px, 500px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-a.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1208/1540.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1572px, 500px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-a.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1205/1539.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(804px, 244px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-d.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1208/1539.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1572px, 244px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-c.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1205/1541.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(804px, 756px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-b.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1208/1541.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1572px, 756px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-a.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1206/1538.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1060px, -12px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-b.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1207/1538.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1316px, -12px, 0px); opacity: 1;">
+              <img alt="" role="presentation" src="https://cartocdn-gusc-a.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1206/1542.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1060px, 1012px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-b.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1207/1542.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1316px, 1012px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-d.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1205/1538.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(804px, -12px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-c.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1208/1538.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1572px, -12px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-a.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1204/1540.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(548px, 500px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-b.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1209/1540.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1828px, 500px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-d.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1205/1542.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(804px, 1012px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-c.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1208/1542.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1572px, 1012px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-d.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1204/1539.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(548px, 244px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-a.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1209/1539.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1828px, 244px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-b.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1204/1541.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(548px, 756px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-c.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1209/1541.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1828px, 756px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-c.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1204/1538.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(548px, -12px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-d.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1209/1538.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1828px, -12px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-c.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1204/1542.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(548px, 1012px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://cartocdn-gusc-d.global.ssl.fastly.net/torrh257/api/v1/map/2a6af4e1fc7b5ff3cb058f86e5ed785c:1556768832251/0,1,2,3,4,5,6,7,8,9,10/12/1209/1542.png?api_key=default_public" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1828px, 1012px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"><img src="https://unpkg.com/leaflet@1.4.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(811px, 57px, 0px);"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"><img src="https://unpkg.com/leaflet@1.4.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(811px, 57px, 0px); z-index: 57;"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(308979px, 394215px, 0px) scale(2048);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, © <a href="https://carto.com/attribution">CARTO</a>
+          </div>
+          </div>
+          </div>
+        
+      </div>
+       
+      
+       </div>
+ 
+  
+     <!-- Load Leaflet and Carto libraries -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://libs.cartocdn.com/carto.js/v4.1.11/carto.min.js"></script>
+    
+    <!-- Load our JavaScript -->
+    <script src="./script.js"></script> 
+    
+      
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+  </div>
+
+      </body>
+      
+</html>
